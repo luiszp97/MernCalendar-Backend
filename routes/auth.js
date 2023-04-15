@@ -16,7 +16,7 @@ const router = Router();
 
 router.post('/new',
             [
-                check('name', 'El nombre es obligatorio').not().isEmpty(),
+                check('name', 'El nombre es obligatorio').not().isEmpty().isAlphanumeric(),
                 check('email', 'El email es obligatorio').isEmail(),
                 check('password', 'El password debe tener mas de 5 caracteres').isLength({min:6}),
                 fieldValidate
